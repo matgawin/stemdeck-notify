@@ -17,7 +17,7 @@ jobs:
 
       # Use cURL to fetch the given URL, saving the response to `data.json`
       - name: Fetch data
-        run: curl "https://api.steampowered.com/IPhysicalGoodsService/CheckInventoryAvailableByPackage/v1?origin=https:%2F%2Fstore.steampowered.com&input_protobuf_encoded=COOVNxICUEw%3D" -o data.json
+        run: curl ${{ secrets.STEAM_DECK_URL }} -o data.json
           
       # Compare the response to the previous run, using a hash of the response as the cache key
       - name: Fetch Cache
